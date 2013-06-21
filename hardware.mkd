@@ -1,0 +1,122 @@
+---
+layout: default
+title: Vehicle Interface - OpenXC
+---
+
+<div class="page-header">
+    <h1>Required Hardware</h1>
+</div>
+
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/assembly.html">
+            Assemble the VI <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
+<div class="row">
+    <div class="span4">
+        <img title="VI with Enclosure"
+            src="/images/cantranslator-boxed-vertical.jpg"/>
+    </div>
+    <div class="span4">
+        <img title="VI with Cable"
+            src="/images/cantranslator-with-plug.jpg"/>
+    </div>
+</div>
+
+The current implementation uses the [Digilent chipKIT Max32][chipkit], an
+[Arduino-compatible][arduino] microcontroller based on PIC32. The [Network
+Shield][] add-on adds two CAN transceivers, which is enough to enable most
+OpenXC applications.
+
+The translator is powered via its micro-USB port, which is connected to the host
+device. CAN messages are received via the OBD-II port in the driver's footwell.
+
+If you want **wireless** support, we have documentation and an extended parts
+list for [adding a Bluetooth module](/bluetooth.html).
+
+**Parts List**
+
+This is a list of the hardware used in the reference OpenXC kit - you're
+guaranteed to have a 100% compatible OpenXC device if you use these parts
+exactly. There are many equally compatible variations on this list from hundreds
+of different vendors, so feel free to use other parts you may have on hand (like
+the crimp connectors, for example).
+
+* Digilent chipKIT Max32 Microcontroller from [Digilent][max32] ($50)
+* Digilent chipKIT Network Shield from [Digilent][Network Shield] ($55)
+* OBD-II Male to Breakout Cable from [OBD2Cables][obd2cable] ($13)
+* (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
+* (7x) Female crimp pins from [Pololu][crimppins] (< $1)
+* (1x) Male crimp pin from [Pololu][crimppinsmale] (< $1)
+* Shrink tubing
+* Rubber cable grommet that fits the OBD-II cable
+* Optional - Enclosure from [PacTec][enclosure] ($11)
+* Optional - Mounting spacers for use with the enclosure
+
+**Tools List**
+
+This is a list of the tools needed to assemble the kit.
+
+* Wire stripper
+* Wire crimper
+* Heat gun (or lighter)
+* Multimeter for continuity testing
+* Optional - label maker
+
+For the suggested enclosure, you'll also need the following:
+
+* Angle cutters
+* Phillips head screw driver
+* Tools for etching and cutting plastic
+* Drill
+
+<div class="page-header">
+  <h3 id="connections"><a href="#connections">Device Connections</a></h3>
+</div>
+
+There are 2 USB ports on the combined Max32 and Network Shield, so getting the
+cables sorted out can be a bit confusing. The ports are meant to be used as
+follows:
+
+* Mini-USB - connect to the serial console for debugging and to upload new
+  firmware.
+* Micro-USB - the OpenXC data is sent through this port - connect it to your
+  computer for testing with the Python script, or to an Android tablet to run
+  an OpenXC application.
+
+<div class="pull-right">
+<img title="USB ports" src="/images/usbports.jpg"/>
+</div>
+
+<div class="alert alert-error">
+<strong>A note about power:</strong> In order to power the board via micro-USB,
+you have to connect the 5v rails of the chipKIT and network shield. This means
+that you absolutely must not plug the mini-USB and micro-USB ports in to
+different devices at the same time! This would short 2 different 5v sources
+together and likely destroy the chipKIT and network shield.
+</div>
+
+The OBD-II cable is safe to plug in at any time, with the vehicle running or
+off. The cable only fits one way into the vehicle's port, like a USB cable.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Bought all of the [parts](#hardware) for the VI? The detailed [assembly
+guide][] is next.
+
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32
+[chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
+[arduino]: http://arduino.cc
+[Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
+[assembly guide]: /assembly.html
+[obd2cable]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
+[crimpconnectors]: http://www.pololu.com/catalog/product/1914
+[crimppins]: http://www.pololu.com/catalog/product/1930
+[crimppinsmale]: http://www.pololu.com/catalog/product/1931
+[enclosure]: http://www.pactecenclosures.com/product-detail.php?productid=62&seriesid=45&classid=26
