@@ -1,0 +1,29 @@
+---
+layout: default
+title: Bluetooth Support
+---
+
+<div class="container">
+
+<div class="row">
+  <div class="span3">
+    <div class="well">
+      <ul class="nav nav-list">
+        <li><a href="/bluetooth/hardware.html">Hardware</a></li>
+        <li><a href="/bluetooth/assembly.html">Assembly</a></li>
+        <li><a href="/bluetooth/troubleshooting.html">Troubleshooting</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="span9">
+
+<div class="page-header">
+    <h1>Bluetooth Extension</h1>
+</div>
+
+{{ content }}
+
+</div>
+</div>
+</div>

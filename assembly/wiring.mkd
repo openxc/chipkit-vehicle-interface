@@ -36,7 +36,7 @@ At this point, the reader should be completely functional.
 There are a few optional paths at this point:
 
 If you want wireless support, now is the time to add a Bluetooth module. We have
-<a href="/bluetooth.html">setup instructions</a> for the <a
+<a href="/bluetooth/hardware.html">setup instructions</a> for the <a
 href="https://www.sparkfun.com/products/10269">SparkFun BlueSMiRF</a>.
 
 Without an enclosure, the VI is at risk of static shock damage and strain damage

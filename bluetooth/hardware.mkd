@@ -1,0 +1,40 @@
+---
+layout: bluetooth
+---
+
+The vehicle interface (VI) firmware supports for sending data over a serial
+(UART) connection instead of USB. If you add a Bluetooth adapter that uses the
+Serial Port Profile (SPP) to your VI, you can connect a tablet (or even a
+phone!) to your car wirelessly. The Android library also has support for
+communicating with a Bluetooth vehicle interface.
+
+The VI firmware must be compiled with the `UART=1` flag for this
+feature to work. Manufacturers may choose to distribute pre-compiled binaries
+with this option enabled, too.
+
+See the [VI
+documentation](http://openxcplatform.com/cantranslator/output/uart.html) for
+more details on adding Bluetooth.
+
+<div class="page-header">
+    <h2>Required Hardware</h2>
+</div>
+
+For this chipKIT-based vehicle interface, we recommend the [SparkFun
+BlueSMiRF](https://www.sparkfun.com/products/10269) Bluetooth module. These
+instructions will guide you through the process of installing the module and
+configuring it to communicate with the VI.
+
+**Bluetooth Parts List**
+
+* SparkFun [BlueSMiRF Silver Bluetooth Module](https://www.sparkfun.com/products/10269)
+* 6 pin length of male to male header pins (right-angle works well)
+* 6 additional female  and male crimp housings and pins *or* a
+  [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Bought all of the parts for Bluetooth? Follow the [assembly
+guide](/bluetooth/assembly.html).
