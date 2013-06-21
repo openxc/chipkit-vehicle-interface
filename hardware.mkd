@@ -16,16 +16,7 @@ title: Vehicle Interface - OpenXC
     </p>
 </div>
 
-<div class="row">
-    <div class="span4">
-        <img title="VI with Enclosure"
-            src="/images/cantranslator-boxed-vertical.jpg"/>
-    </div>
-    <div class="span4">
-        <img title="VI with Cable"
-            src="/images/cantranslator-with-plug.jpg"/>
-    </div>
-</div>
+![VI with Cable](/images/vi-raw.jpg)
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
 [Arduino-compatible][arduino] microcontroller based on PIC32. The [Network
@@ -38,7 +29,7 @@ device. CAN messages are received via the OBD-II port in the driver's footwell.
 If you want **wireless** support, we have documentation and an extended parts
 list for [adding a Bluetooth module](/bluetooth.html).
 
-**Parts List**
+## Parts List
 
 This is a list of the hardware used in the reference OpenXC kit - you're
 guaranteed to have a 100% compatible OpenXC device if you use these parts
@@ -57,7 +48,7 @@ the crimp connectors, for example).
 * Optional - Enclosure from [PacTec][enclosure] ($11)
 * Optional - Mounting spacers for use with the enclosure
 
-**Tools List**
+## Tools List
 
 This is a list of the tools needed to assemble the kit.
 
@@ -75,7 +66,7 @@ For the suggested enclosure, you'll also need the following:
 * Drill
 
 <div class="page-header">
-  <h3 id="connections"><a href="#connections">Device Connections</a></h3>
+  <h2 id="connections"><a href="#connections">Device Connections</a></h2>
 </div>
 
 There are 2 USB ports on the combined Max32 and Network Shield, so getting the
@@ -88,9 +79,7 @@ follows:
   computer for testing with the Python script, or to an Android tablet to run
   an OpenXC application.
 
-<div class="pull-right">
-<img title="USB ports" src="/images/usbports.jpg"/>
-</div>
+![USB ports](/images/usbports.jpg)
 
 <div class="alert alert-error">
 <strong>A note about power:</strong> In order to power the board via micro-USB,
