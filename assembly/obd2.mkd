@@ -1,0 +1,127 @@
+---
+layout: assembly
+title: OBD-II Cable Assembly - OpenXC
+---
+
+<div class="page-header">
+    <h2>OBD-II Cable</h2>
+</div>
+
+<div class="picture well">
+    <img src="/images/assembly/obd-cable-bare.jpg" />
+    <legend>The OBD-II cable before beginning</legend>
+</div>
+
+If you plan to use an enclosure, slide the round grommet onto the bare wire end
+of the cable (you won't be able to do this later without cutting a slit in the
+grommet).  If you don't use the grommet, plan on finding another form of strain
+relief.  Cut a section of 3/8" shrink tubing about 1" long and slide it onto
+the cable.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-1.jpg" />
+    <legend>The grommet and shrink tubing on the OBD-II breakout cable.</legend>
+</div>
+
+Crimp a female pin onto the following wires and verify the connection to the
+expected pin on the OBD-II connector using a multimeter. The pinout for the
+cable recommended above is available at <a
+href="http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html">OBD2Cables.com</a>.
+
+<div class="picture well">
+    <img src="/images/assembly/uncrimped-bus-wires.jpg" />
+    <legend>The CAN1, CAN2-1, CAN2-2 and 12v power wires before crimping</legend>
+</div>
+
+Take note that the crimp pins need to be squeezed in two places (ideally with a
+proper <a href="http://www.pololu.com/catalog/product/1929">crimp tool</a>) -
+once around the wire end, and once around the insulation.
+
+<div class="stacked picture well">
+    <img src="/images/assembly/crimp-pin-detail.jpg" />
+    <img src="/images/assembly/crimp-pin-detail-crimped.jpg" />
+    <legend>Position the wire on the pin to get electrical connectivity as well
+        as strain relief.</legend>
+</div>
+
+These instructions describe how to make a 3 bus cable. The chipKIT only has 2
+CAN controllers, so you will be using at most 2 of the buses at one time. Most
+vehicles use what we will call the `CAN1` and `CAN2-1` buses.
+
+<div class="picture well">
+<div class="row">
+    <img src="/images/assembly/openxc-assembly-3.jpg" />
+    <legend>OBD-II breakout cable with crimped wires</legend>
+</div>
+</div>
+
+<div class="well">
+<div class="row">
+<table>
+<thead>
+<tr><th>Wire Color</th><th>OBD-II Pin</th><th>Bus</th><th>Polarity</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>White and black</td>
+    <td>6</td>
+    <td>CAN1</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Green and black</td>
+    <td>14</td>
+    <td>CAN1</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Orange</td>
+    <td>3</td>
+    <td>CAN2-1</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Purple</td>
+    <td>11</td>
+    <td>CAN2-1</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Light blue</td>
+    <td>1</td>
+    <td>CAN2-2</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Green</td>
+    <td>8</td>
+    <td>CAN2-2</td>
+    <td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+When all pins are attached, verify that you have good electrical conductivity
+with the intended pin.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-2.jpg" />
+    <legend>Testing crimped OBD-II pins</legend>
+</div>
+
+After connecting and testing the crimp pins, trim the red (battery voltage) and
+black (ground) wires down to the insulation but leave them sticking out of the
+main cable insulation. If you want to power the chipKIT from the vehicle in the
+future, you'll need these wires.
+
+Trim all of the other uncrimped wires down to the main cable insulation - we
+won't be needing them.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you've built the OBD-II cable, [attach the crimp
+housings](/assembly/crimphousings.html).

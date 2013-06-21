@@ -1,0 +1,16 @@
+---
+layout: assembly
+title: Vehicle Power
+---
+
+<div class="page-header">
+    <h2>Vehicle Power</h2>
+</div>
+
+The Vehicle Interface can be powered from the vehicle 12V power lines as seen
+below - connect 12v to `Vin` and ground to...`GND`.
+
+<div class="well">
+  <img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
+  <legend>Powering the Vehicle Interface from the vehicle.</legend>
+</div>

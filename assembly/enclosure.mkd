@@ -1,0 +1,82 @@
+---
+layout: assembly
+title: Enclosure
+---
+
+<div class="page-header">
+    <h2>Optional Enclosure</h2>
+</div>
+
+If you are using the recommended PacTec enclosure, it requires a few modifications.
+
+<div class="page-header">
+    <h2>Lower Enclosure</h2>
+</div>
+
+1. Remove the four existing raised screw sockets from the inside bottom of
+   enclosure. A pair of angle cutters should do the trick.
+2. While holding the chipKIT on the enclosure's lower half, use a pen to mark
+  where the new mounting holes should go. They are asymmetrical, so they
+  definitely won't line up with the existing holes. Remove the chipKIT and drill
+  four new screw holes in the bottom of the enclosure.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-11.jpg"/>
+    <legend>Clipping off the existing raised screw sockets.</legend>
+
+    <img src="/images/assembly/openxc-assembly-12.jpg"/>
+    <legend>The empty enclosure with new mounting holes drilled.</legend>
+</div>
+
+1. Put screws into the 4 holes from below the enclosure. Place the enclosure
+   down on a table so the screws are kept in place while you insert the chipKIT.
+2. Mount the Network Shield on the Max32.
+3. Fit the Max32 onto the 4 screws. Again, the mounting holes are asymmetrical,
+   so it should only fit one way.
+4. Screw round stand-offs onto the screws. Tighten by holding stand-offs with
+   needle-nose pliers while tightening the other side with a screwdriver. Be
+   careful on the two screws nearest the Ethernet port - these don't have much
+   support, and the Network Shield could be damaged by over tightening.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-14.jpg" />
+    <legend>chipKIT rear with mounting screws</legend>
+</div>
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-15.jpg" />
+    <legend>chipKIT front with mounting screws</legend>
+</div>
+
+<div class="page-header">
+    <h2>Front Plate</h2>
+</div>
+
+1. Using the <a
+   href="/documents/CAN-Reader-Front-Panel-Template.pdf">template</a>, drill a
+   hole for the OBD-II cable.
+1. Trim the OBD-II cable hole and shape it with a round file.
+1. Using the template, drill out and shape the hole for the USB cable using a
+   straight file.
+
+<div class="page-header">
+    <h2 id="final-assembly"><a href="#final-assembly">Final Assembly</a></h2>
+</div>
+
+Slide the grommet to about where the front plate will be. Put the front plate on
+the grommet. Lay the cable flat on the outside of the Ethernet jack. Bend the
+cable between the standoff and the power connector, being careful to put as
+little strain as possible on the small wires of the 2x6 connectors. Push the
+front plate into place.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-18.jpg" />
+    <legend>Front plate and cable grommet installation.</legend>
+</div>
+
+1. Put the back plate into place and attach the top of the enclosure.
+1. Secure the enclosure with the two screws.
+1. Affix the four rubber feet to the underside just to the outside of the four
+   mounting screws.  (This will prevent scratches from the exposed screws.)
+1. Attach the hook-side Velcro to the underside, leaving the enclosure screws
+  accessible.

@@ -3,37 +3,30 @@ layout: default
 title: chipKIT-based OpenXC Vehicle Interface
 ---
 
-<div class="row">
-    <div class="span12">
-        <h1>OpenXC chipKIT Vehicle Interface</h1>
-        <p>
-            <img src="/images/vi-boxed.jpg"/>
-        </p>
-    </div>
+<div class="page-header">
+    <h1>OpenXC chipKIT Vehicle Interface</h1>
 </div>
 
-<div class="row">
-    <div class="span6">
+<img src="/images/vi-boxed.jpg"/>
 
-        <h2>What is OpenXC?</h2>
-        <p>
-            OpenXC is an API to your car - by installing a small
-            hardware module to read and translate metrics from a car's
-            internal network, the data becomes accessible from most
-            Android applications using the OpenXC library. You can start
-            making vehicle-aware applications that have better
-            interfaces based on context, can minimize distraction while
-            driving, are integrated with other connected services, and
-            can offer you more insight into your car's operation.
-        </p>
+<h2>What is OpenXC?</h2>
+<p>
+    OpenXC is an API to your car - by installing a small
+    hardware module to read and translate metrics from a car's
+    internal network, the data becomes accessible from most
+    Android applications using the OpenXC library. You can start
+    making vehicle-aware applications that have better
+    interfaces based on context, can minimize distraction while
+    driving, are integrated with other connected services, and
+    can offer you more insight into your car's operation.
+</p>
 
 
 The vehicle interface (VI or CAN translator) is based on a microcontroller with two
-external connections - one to the CAN bus via the OBD-II port, and one to the
-[host device][] via USB or serial. It passively listens for a subset of CAN
+external connections - one to the CAN bus via the OBD-II port, and one to a
+[host device][] via USB or Bluetooth. It passively listens for a subset of CAN
 messages, performs required unit conversion or factoring and outputs a [generic
 version][output-format] to the USB interface.
 
-    </div>
-
-</div>
+[output-format]: /vehicle-interface/output-format.html
+[host device]: /android/index.html

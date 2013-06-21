@@ -1,0 +1,52 @@
+---
+layout: assembly
+title: Power Jumper Assembly - OpenXC
+---
+
+<div class="page-header">
+    <h2 id="power-jumper"><a href="#power-jumper">Power Jumper</a></h2>
+</div>
+
+1. Cut a length of wire, 2" to 3" long.
+2. Strip about an 1/8" on both ends.
+3. Crimp a female pin to one end and a male to the other.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-8.jpg" />
+    <legend>Power jumper parts</legend>
+</div>
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-9.jpg" />
+    <legend>Crimped power jumper wire</legend>
+</div>
+
+Put a 1x1 housing on the female end.
+
+*If not building the enclosure:*
+
+Put a 1x1 housing on the male end, too.
+
+*If building the enclosure:*
+
+Put shrink tubing on the male end, enough to cover a bit of the insulation and
+most of the crimp pin that will not actually get pushed into the socket. Put a
+bend in the crimp pin about halfway between the pin and the wire, otherwise it
+won't fit in the enclosure. Rather than a single 90 degree bend, put in two
+bends of 45 degrees. Don't make either of those bends on the skinny pin, put
+them both on the thicker body of the crimp pin.
+
+The reason for this is that a plastic housing will be too tall to fit inside the
+recommended case.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-10.jpg" />
+    <legend>Bend the power jumper after shrink tubing to fit in the
+    enclosure.</legend>
+</div>
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Next, complete the [electrical wiring](/assembly/wiring.html).

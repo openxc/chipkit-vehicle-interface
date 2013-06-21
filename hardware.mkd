@@ -10,7 +10,7 @@ title: Vehicle Interface - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
-        <li><a href="/assembly.html">
+        <li><a href="/assembly/obd2.html">
             Assemble the VI <i class="icon-arrow-right"></i>
         </a></li>
     </p>
@@ -96,14 +96,13 @@ off. The cable only fits one way into the vehicle's port, like a USB cable.
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#hardware) for the VI? The detailed [assembly
-guide][] is next.
+Bought all of the parts for the VI? The detailed [assembly guide][] is next.
 
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32
 [chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [arduino]: http://arduino.cc
 [Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
-[assembly guide]: /assembly.html
+[assembly guide]: /assembly/obd2.html
 [obd2cable]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
 [crimpconnectors]: http://www.pololu.com/catalog/product/1914
 [crimppins]: http://www.pololu.com/catalog/product/1930

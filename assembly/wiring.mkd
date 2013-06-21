@@ -1,0 +1,49 @@
+---
+layout: assembly
+title: Wiring - OpenXC
+---
+
+<div class="page-header">
+    <h2>Wiring</h2>
+</div>
+
+1. Connect the `CAN1` plug on the OBD-II cable to the 12-pin header labeled
+  `CAN1` on the Network Shield. Make sure the 2 wires line up with the `CANH`
+  and `CANL` labels on the board as well.
+1. Connect the `CAN2-1` plug on the OBD-II cable to the 12-pin header labeled
+  `CAN2` on the Network Shield.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-20.jpg" />
+    <legend>Install the OBD-II cable with the wires closer to the board's
+        center.</legend>
+</div>
+
+1. Connect the female end of the power jumper to pin 1 of JP4. Connect the male
+  end to 5vo on the POWER connector.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-17.jpg" />
+    <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
+</div>
+
+At this point, the reader should be completely functional.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+There are a few optional paths at this point:
+
+If you want wireless support, now is the time to add a Bluetooth module. We have
+<a href="/bluetooth.html">setup instructions</a> for the <a
+href="https://www.sparkfun.com/products/10269">SparkFun BlueSMiRF</a>.
+
+Without an enclosure, the VI is at risk of static shock damage and strain damage
+in the event of a drop. There are instructions for an optional [plastic
+enclosure](/assembly/enclosure.html)
+
+If you want to [power the VI from the vehicle](/assembly/vehicle-power.html),
+that's possible with some extra wiring.
+
+Otherwise, continue on to [final assembly](/assembly/final-assembly.html).

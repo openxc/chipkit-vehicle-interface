@@ -1,0 +1,20 @@
+---
+layout: assembly
+title: Final Assembly
+---
+
+If you have any problems with the assembly instructions, please ask for help in
+the <a href="http://groups.google.com/group/openxc">Google Group</a>.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-19.jpg" />
+    <legend>The completed vehicle interface!</legend>
+</div>
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you've constructed a vehicle interface, you go through the <a
+href="http://openxcplatform.com/vehicle-interface/testing.html">test
+procedure</a> to make sure it's working correctly.
