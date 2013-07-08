@@ -13,8 +13,8 @@ feature to work. Manufacturers may choose to distribute pre-compiled binaries
 with this option enabled, too.
 
 See the [VI
-documentation](http://openxcplatform.com/cantranslator/output/uart.html) for
-more details on adding Bluetooth.
+documentation](http://vi-firmware.openxcplatform.com/en/latest/output/uart.html)
+for more details on adding Bluetooth.
 
 <div class="page-header">
     <h2>Required Hardware</h2>

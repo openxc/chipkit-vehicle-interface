@@ -20,7 +20,7 @@ steps.
   flipped, and the same for CTS/RTS.
 * Confirm the baud rate of the RN-42 is correct - double check in the [PIC32
   UART platform
-  docs](http://openxcplatform.com/cantranslator/platforms/max32.html#uart) to
+  docs](http://vi-firmware.openxcplatform.com/en/latest/platforms/max32.html#uart) to
   find the correct rate.
 * Finally, take a picture of your setup and post a link in the [Google
   Group](https://groups.google.com/forum/?fromgroups#!forum/openxc)
