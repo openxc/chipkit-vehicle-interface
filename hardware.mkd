@@ -27,7 +27,7 @@ The translator is powered via its micro-USB port, which is connected to the host
 device. CAN messages are received via the OBD-II port in the driver's footwell.
 
 If you want **wireless** support, we have documentation and an extended parts
-list for [adding a Bluetooth module](/bluetooth.html).
+list for [adding a Bluetooth module](/bluetooth/hardware.html).
 
 ## Parts List
 
