@@ -12,7 +12,7 @@ layout: bluetooth
    shrink tubing to avoid shorts.
 1. Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
    Shield according to the pins defined in the
-   [documentation](http://vi-firmware.openxcplatform.com/en/latest/output/uart.html#chipkit-max32).
+   [documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/max32.html#uart).
 1. Find a good place to tuck the Bluetooth module away so the wires aren't
    shorting out and it won't get in the way of the enclosure.
 
