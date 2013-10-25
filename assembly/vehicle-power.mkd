@@ -14,3 +14,12 @@ below - connect 12v to `Vin` and ground to...`GND`.
   <img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
   <legend>Powering the Vehicle Interface from the vehicle.</legend>
 </div>
+
+## Efficiency Issues
+
+We've discovered that the linear voltage regulators included in the chipKIT
+Max32 are very inefficient when providing with more than 9v of input voltage,
+and when a vehicle provides nearly 15v they can get so hot that it effects
+normal operation. If you intend to leave the chipKIT plugged into the vehicle
+for more than a few hours, we strongly recommend the [alternative power
+supply](/assembly/alternative-power.html).

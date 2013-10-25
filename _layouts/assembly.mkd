@@ -13,6 +13,7 @@ layout: default
         <li><a href="/assembly/jumper.html">Power Jumper</a></li>
         <li><a href="/assembly/wiring.html">Wiring</a></li>
         <li><a href="/assembly/vehicle-power.html">Vehicle Power</a></li>
+        <li><a href="/assembly/alternative-power.html">Alternative Vehicle Power</a></li>
         <li><a href="/assembly/enclosure.html">Enclosure (optional)</a></li>
         <li><a href="/assembly/final-assembly.html">Final Assembly</a></li>
       </ul>
