@@ -7,18 +7,24 @@ title: Alternative Vehicle Power
     <h2>Making chipKIT Max32 Robust in Automotive Environment</h2>
 </div>
 
+We've discovered that the linear voltage regulators included in the chipKIT
+Max32 are very inefficient when providing with more than 9v of input voltage,
+and when a vehicle provides nearly 13V+ they can get so hot that it effects
+normal operation. If you intend to leave the chipKIT plugged into the vehicle
+for more than a few hours, we strongly recommend this alternative power supply.
+
 Thanks to Basavaraj Tonshal and James Rankin II for their engineering work and
 for writing this report, and to Zac Nelson for additional engineering - all from
 Ford.
 
 ## Replacing the Voltage regulator on chipKIT Max32
 
-The chipKIT Max32 uses two voltage regulators, linear voltage regulator NCP1117
-and MCP1725. NCP1117 is main voltage regulator that steps down input voltage to
-5V.  This is used to power 3.3 voltage regulator and 5V power rail. The 3.3 V
-power supply MCP1725 steps down 5V coming from NCP1117 to 3.3volt.
+The chipKIT Max32 uses two linear voltage regulators, the NCP1117
+and MCP1725. The NCP1117 is the main regulator that steps down the input voltage to
+5V. This is used as input to the MCP1725, which steps the 5V down to 3.3V for
+the PIC32.
 
-NCP1117 is of type linear voltage regulator with transistor acting like dynamic
+The NCP1117 is a linear voltage regulator, with a transistor acting like a dynamic
 resistor ([reference pdf][ref1]). The resistance varies as the load increases to
 produce constant DC output. The power dissipation is directly proportional to
 the junction temperature of the transistor.
@@ -26,20 +32,19 @@ the junction temperature of the transistor.
 The power dissipation `P` is given by
 
 ```
-P= (VIN-VOUT)*IL
+P = (VIN - VOUT) * IL
 ```
 
-The average load on the chipKIT Max32 with Network Shield is about 250 mA with
-Bluetooth and other accessories. When chipKIT Max32 is powered by the OBD II
-pins, with ~13.5 V available on OBD II pin, it needs to be stepped down to 5V
-
-So the power dissipated is about:
+The average load from the chipKIT Max32 with the Network Shield and an RN-42
+Bluetooth module is about 250mA. When the chipKIT is powered by the OBD-II pins,
+with ~13.5V available on OBD-II pin, it needs to be stepped down to 5V. The
+power dissipated is about:
 
 ```
-P= (13.5-5)*250/1000 = 2.125 Watts
+P = (13.5 - 5) * 250 / 1000 = 2.125 Watts
 ```
 
-The copper area available for SOT-223 package that is being used with NCP 1117
+The copper area available for SOT-223 package that is being used with NCP1117
 is too small to dissipate the heat generated. So basically we are generating a
 lot of heat and there is no place for the heat to dissipate. The issue is
 greater when the ambient temperature is high and the hardware is enclosed in a
@@ -49,26 +54,26 @@ hardware starts behaving erratically.
 
 There are various solutions to address this issue:
 
-* Heat sink on the linear voltage regulator
-* Extra voltage regulator
-* Bypass  the existing voltage regulator with switching voltage regulator
+* Add a heat sink on the linear voltage regulator
+* Add an extra voltage regulator to decrease the load on the NCP1117.
+* Bypass the existing voltage regulator with a switching voltage regulator
 
 Providing heat sink is not an effective solution and also the space available is
-limited to fit in a heat sink.   One can also think of putting an extra voltage
-regulator that will step down the OBD II pin voltage from ~13.5V to 8V and then
-feed the output from the 8V voltage regulator to on board NCP1117. This should
-work.
+limited to fit in a heat sink. One can also think of putting an extra voltage
+regulator that will step down the OBD-II pin voltage from ~13.5V to 8V and then
+feed the output from the 8V voltage regulator to on board NCP1117.
 
-The suggested method is bypassing the existing voltage regulator with switching
-type regulator [2]. Switching regulators work using high frequency switching in
+We suggest bypassing the existing voltage regulator with a [switching type
+regulator][ref2]. Switching regulators work using high frequency switching in
 combination with energy storage elements inductor and capacitor to produce a
 constant stepped down DC output. There are no dissipative elements in the
-circuit. Advantages of switching type regulators are high efficiency, less heat
-and smaller size.
+circuit. The advantages of switching type regulators are higher efficiency, less
+heat and smaller size.
 
-Table 1 shows normal and sleep mode current draws with different voltage
+This table shows normal and sleep mode current draws with different voltage
 regulators running VI firmware. The test is done with a DC power supply at 14.2V
-with box open.
+with box open, using the built-in regulators and the Pololu 5V, 600mA Step-Down
+Voltage Regulator D24V6F5.
 
 <table>
 <thead>
@@ -77,47 +82,44 @@ with box open.
 </thead>
 <tbody>
 <tr>
-   <td>Linear on Board Voltage Regulator</td>
+   <td>Built-in linear</td>
    <td>172</td>
    <td>45</td>
 </tr>
 <tr>
-   <td>Switching supply POLOLU Item #D24V6F5</td>
+   <td>Switching regulator</td>
    <td>72</td>
    <td>20</td>
 </tr>
 </tbody>
 </table>
 
-Table 1: Current draw with different voltage regulators running a VI firmware
-program
-
-Figure 1 below shows the picture of a switching voltage regulator that is used
-in VI hardware
-
 ![Switching Voltage Regulator](/images/assembly/alt-power-voltagereg.jpg)
 
-Figure 1:  Pololu 5V, 600mA Step-Down Voltage Regulator D24V6F5
+Finally, here's how the external switching voltage regulators can be connected
+to chipKIT Max32 and Network shield. When bypassing the onboard voltage
+regulator the POWER SELECT jumper JP1 must be set to JP1 ([reference
+PDF][ref3]).
 
-Figure 2 and Figure 3 show how the external switching voltage regulators
-connected to chipKIT Max32 and Network shield. When bypassing the onboard
-voltage regulator the POWER SELECT jumper JP1 must be set to JP1 [3].
+<div class="picture well">
+    <img src="/images/assembly/alt-power-wiring.jpg" />
+    <legend>The OBD-II power pin is connected to
+       VIN and SHD, and the ground pin is connected GND.</legend>
+</div>
 
-![Wiring 1](/images/assembly/alt-power-wiring.jpg)
-
-Figure 2:  Wiring Voltage Regulator to OBD II, OBD II power pin is connected to
-VIN and SHD, OBD II ground pin is connected GND.
-
-![Wiring 2](/images/assembly/alt-power-wiring2.jpg)
-
-Figure 3:  Wiring Voltage Regulator to chipKIT Max32 VOUT from the voltage
-regulator is connected VIN and OBD II ground pin is connected GND on the barrel
-connector J17.  References
+<div class="picture well">
+    <img src="/images/assembly/alt-power-wiring2.jpg" />
+   <legend>VOUT from the voltage
+      regulator is connected VIN and the OBD-II ground pin is connected GND on the barrel
+      connector J17.</legend>
+</div>
 
 ### References
 
-1. http://radio-hobby.org/uploads/journal/CircuitCellar/2012/cc_12_2012.pdf
-1. http://www.rason.org/Projects/swregdes/swregdes.htm
-1. http://www.digilentinc.com/Data/Products/CHIPKIT-MAX32/chipKIT%20Max32_rm.pdf
+1. [http://radio-hobby.org/uploads/journal/CircuitCellar/2012/cc_12_2012.pdf][ref1]
+1. [http://www.rason.org/Projects/swregdes/swregdes.htm][ref2]
+1. [http://www.digilentinc.com/Data/Products/CHIPKIT-MAX32/chipKIT%20Max32_rm.pdf][ref3]
 
 [ref1]: http://radio-hobby.org/uploads/journal/CircuitCellar/2012/cc_12_2012.pdf
+[ref2]: http://www.rason.org/Projects/swregdes/swregdes.htm
+[ref3]: http://www.digilentinc.com/Data/Products/CHIPKIT-MAX32/chipKIT%20Max32_rm.pdf
