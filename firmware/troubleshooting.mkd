@@ -7,23 +7,10 @@ title: OpenXC chipKIT Firmware Troubleshooting
     <h1>Troubleshooting</h1>
 </div>
 
-## Multiple COM Ports
-
-If you have more than one serial (COM) port active, you may need to explicitly
-specify which port to use. The second argument is optional and will accept which
-port name you'd like to use. For example:
-
-Windows:
-
-    $ script/upload_hex.sh <firmware>.hex com4
-
-OS X/Linux:
-
-    $ script/upload_hex.sh <firmware>.hex /dev/ttyUSB2
-
 ## Windows Notes
 
-If, when using Cygwin, you see the error
+The `upload_hex.sh` script will work in Cygwin in Windows, but if you see the
+error:
 
     $ '\r: command not found
 
@@ -36,12 +23,6 @@ resolve the issue, run this command in Cygwin:
 
 If the flashing script failed, you may need to manually install the necessary
 dependencies.
-
-### FTDI Driver
-
-If you are using Windows or OS X, you might need to install the FTDI Driver,
-which manages the virtual COM port. You can download the driver directly from
-FTDI's website [here][FTDI-Driver].
 
 ### AVR Programmer
 
@@ -58,8 +39,10 @@ more information on setting this.
 don't, you only need the AVR programmer), you can install the programmer
 separately:
 
-* Windows - Download and install MPIDE from Digilent and set the MPIDE
-  environment variables (see below).
+* Windows
+  * Download and install [WinAVR](http://sourceforge.net/projects/winavr/files/WinAVR/20100110/)
+  * or download and install MPIDE from Digilent and set the MPIDE environment
+    variables (see below).
 * Linux - Find `avrdude` in your distribution's package manager.
 * OS X - Install `avrdude` with Homebrew
 

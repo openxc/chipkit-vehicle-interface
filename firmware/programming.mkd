@@ -12,7 +12,61 @@ release](https://github.com/openxc/vi-firmware/releases) of the `vi-firmware`
 source code from GitHub - the repository has a script we will use for flashing
 the firmware.
 
+Next, make sure you have the **mini-USB** port on the chipKIT connected to your
+computer to upload a new firmware. This is different than the micro-USB port
+that you use to read vehicle data - see the [device
+connections](http://chipkit-vi.openxcplatform.com/hardware.html#connections)
+section to make sure you have the correct cable attached.
+
 <div class="panel-group" id="accordian">
+
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h4 class="panel-title">
+            <a class="accordian-toggle" data-toggle="collapse"
+                  data-parent="#accordian" href="#collapseUnix">
+               Mac OS X and Linux
+            </a>
+         </h4>
+      </div>
+      <div id="collapseUnix" class="panel-collapse collapse">
+         <div class="panel-body">
+
+         <p>If your network uses an Internet proxy (e.g. a corporate network)
+         set these environmet variables:
+
+<pre><code>$ export http_proxy=&lt;your proxy&gt;
+$ export https_proxy=$http_proxy
+$ export all_proxy=$http_proxy</code></pre>
+          </p>
+
+         <p>Run the <code>upload_hex.sh</code> script from the
+         <code>vi-firmware</code> directory, passing it the file path to the
+         .hex firmware file you obtained.
+
+<pre><code>$ cd vi-firmware
+vi-firmware/ $ script/upload_hex.sh &lt;firmware file&gt;.hex</code></pre>
+            </p>
+
+         <p>If you have more than one virtual serial (COM) port active, you may
+         need to explicitly specify which port to use. Pass the port name as the
+         second argument to the script, e.g.:
+
+<pre><code>$ cd vi-firmware
+vi-firmware/ $ script/upload_hex.sh &lt;firmware file&gt;.hex /dev/ttyUSB2</code></pre>
+         </p>
+
+            <p>The script attempts to install all required dependencies
+            automatically. If you run into problems, or are running an operating
+            system not listed above, you may need to install the dependencies
+            manually. For instructions on how to install the dependencies
+            manually, as well as how to address some common errors, see the <a
+            href="/firmware/troubleshooting.html">troubleshooting</a> section
+            for more information. </p>
+
+         </div>
+      </div>
+   </div>
 
    <div class="panel panel-default">
       <div class="panel-heading">
@@ -26,11 +80,39 @@ the firmware.
       <div id="collapseWindows" class="panel-collapse collapse">
          <div class="panel-body">
             <ol>
-               <li>Install <a href="http://www.cygwin.com">Cygwin</a> and in the installer, select the
-                  following packages: <code>curl, libsasl2, ca-certificates, patchutils</code></li>
-               <li>Start a Cygwin Terminal.</li>
-               <li>Run this in the termial to configure it to ignore Windows-style line endings in scripts:
-                 <code>echo "set -o igncr && export SHELLOPTS" >> ~/.bashrc && source ~/.bashrc</code></li>
+               <li>Install the <a
+               href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI USB-serial
+               Driver</a> - you should already have this if you've programmed an
+               Arduino from your computer.
+               </li>
+
+               <li>Install <a
+               href="http://sourceforge.net/projects/winavr/files/WinAVR/20100110/">WinAVR</a>
+               and make sure to leave the option to add the tools to your
+               <code>PATH</code> checked.
+
+               <li>Open the Windows Device Manager and look under "Ports" for a
+               "USB Serial Port" - take note of the COM port number, e.g. COM14.
+               If there is more than one, unplug the chipKIT and see which
+               disappears.
+               </li>
+
+               <li>Open a Command Prompt and navigate to the "script" directory
+               in the vi-firmware folder:
+
+               <pre><code>C:\Users\me> cd Documents\vi-firmware\script
+C:\Users\me\Documents\vi-firmware\script></code></pre>
+
+               </li>
+
+               <li>Run the <code>upload_hex.bat</code> script, passing the path
+               to the firmware file you want to program and the COM port number,
+               e.g.:
+
+               <pre><code>C:\Users\me\Documents\vi-firmware\script> upload_hex.bat C:\Users\me\Downloads\openxc-firmware\focus-2012-CHIPKIT.hex com14</code></pre>
+
+               </li>
+
             </ol>
          </div>
       </div>
@@ -38,36 +120,12 @@ the firmware.
 
 </div>
 
-<h4>All Platforms</h4>
-
-1. If your network uses an Internet proxy (e.g. a corporate network) set the
-   ``http_proxy`` and ``https_proxy`` environment variables:
-
-        $ export http_proxy=<your proxy>
-        $ export https_proxy=<your proxy>
-
-1. Plug your Vehicle Interface into your computer using a **mini-USB**
-   connection (*not* the micro-USB connection you use to transfer vehicle data).
-
-1. Run the ``upload_hex.sh`` script from the ``vi-firmware`` directory, passing
-   it the file path to the .hex firmware file you obtained.
-
-        $ cd vi-firmware
-        vi-firmware/ $ script/upload_hex.sh <firmware file>.hex
-
-The script attempts to install all required dependencies automatically. If you
-run into problems, or are running an operating system not listed above, you may
-need to install the dependencies manually. For instructions on how to install
-the dependencies manually, as well as how to address some common errors, see the
-[troubleshooting][troubleshooting] section for more information.
-
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-Once you've flashed the firmware using the script, it's time to test your Vehicle Interface.
-You can use the [OpenXC Python Library][python-test] to run a quick smoke test to verify the firmware flashed
-successfully.
+Once you've flashed the firmware using the script, it's time to test your
+Vehicle Interface. You can use the [OpenXC Python Library][python-test] to run a
+quick smoke test to verify the firmware flashed successfully.
 
 [python-test]: http://www.openxcplatform.com/python/getting-started.html
-[troubleshooting]: /firmware/troubleshooting.html
