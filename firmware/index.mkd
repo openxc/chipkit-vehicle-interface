@@ -1,0 +1,28 @@
+---
+layout: firmware
+title: Firmware Options
+---
+
+<div class="page-header">
+    <h1>{{ page.title }}</h1>
+</div>
+
+You have a few different options for code to run on the chipKIT VI:
+
+* Use [binary firmware from an
+  automaker](http://openxcplatform.com/vehicle-interface/firmware.html) - these
+  are usually intended for application developers that are only interested in
+  the translated data. You probably want this option!
+* Advanced: Compile the the [official OpenXC VI firmware](http://vi-firmware.openxcplatform.com)
+   (the source for most binary firmware, e.g. those from Ford). This is the best
+   option if you have your own CAN messages you want to support.
+* Expert: Build your own code to run on the VI. The chipKIT is a very capable
+  prototyping platform - we recommend looking at Digilent's [Getting Started
+  Guide](http://chipkit.net/started/) for an introduction to writing completely
+  custom code for the chipKIT. If you want to use some of the more advanced
+  libraries that the VI firmware
+
+For actually programming code onto the chipKIT (what we call "flashing
+firmware"), the chipKIT comes with a bootloader that allows you to re-program it
+via the mini-USB port using `avrdude` - see the [instructions on
+flashing](/firmware/programming.html).

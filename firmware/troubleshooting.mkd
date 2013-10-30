@@ -8,75 +8,83 @@ title: OpenXC chipKIT Firmware Troubleshooting
 </div>
 
 ## Multiple COM Ports
-If you have more than one serial (COM) port active, you may need to explicitly specify which port to use.
-The second argument is optional and will accept which port name you'd like to use. For example:
+
+If you have more than one serial (COM) port active, you may need to explicitly
+specify which port to use. The second argument is optional and will accept which
+port name you'd like to use. For example:
+
+Windows:
+
+    $ script/upload_hex.sh <firmware>.hex com4
 
 OS X/Linux:
 
     $ script/upload_hex.sh <firmware>.hex /dev/ttyUSB2
-    
-Windows:
-
-    $ script/upload_hex.sh <firmware>.hex com4
 
 ## Windows Notes
 
 If, when using Cygwin, you see the error
 
-    $ '\r: command not found 
-    
-then your Git configuration added
-Windows-style ''CRLF'' line endings. To resolve the issue, run this command in Cygwin:
+    $ '\r: command not found
+
+then your Git configuration added Windows-style `CRLF` line endings. To
+resolve the issue, run this command in Cygwin:
 
     $ set -o igncr && export SHELLOPTS
-    
+
 ## Installing Dependencies
 
-If the flashing script failed, you may need to manually install the necessary dependencies.
+If the flashing script failed, you may need to manually install the necessary
+dependencies.
 
 ### FTDI Driver
 
-If you are using Windows or OS X, you might need to install the FTDI Driver, which manages the virtual COM port.
-You can download the driver directly from FTDI's website [here][FTDI-Driver].
-
+If you are using Windows or OS X, you might need to install the FTDI Driver,
+which manages the virtual COM port. You can download the driver directly from
+FTDI's website [here][FTDI-Driver].
 
 ### AVR Programmer
 
-The AVR Programmer is included in MPIDE, a package which your computer might or might not already have. Regardless,
-here are the steps you'll need to take to obtain an AVR Programmer.
+The AVR Programmer is included in MPIDE, a package which your computer might or
+might not already have. Regardless, here are the steps you'll need to take to
+obtain an AVR Programmer.
 
-**If MPIDE is installed**: The AVR Programmer ''avrdude'' is included in MPIDE. To resolve the dependency issue,
-you need to set the ''MPIDE_DIR'' environment variable in your terminal to point to your MPIDE installation.
-Check below for more information on setting this.
+**If MPIDE is installed**: The AVR Programmer `avrdude` is included in MPIDE. To
+resolve the dependency issue, you need to set the `MPIDE_DIR` environment
+variable in your terminal to point to your MPIDE installation. Check below for
+more information on setting this.
 
-**If MPIDE is not installed**: If you don't have MPIDE (don't worry if you don't, you only need the AVR programmer),
-you can install the programmer separately:
+**If MPIDE is not installed**: If you don't have MPIDE (don't worry if you
+don't, you only need the AVR programmer), you can install the programmer
+separately:
 
-* Linux - Find ''avrdude'' in your distribution's package manager.
-
-* OS X - Install ''avrdude'' with Homebrew
-
-* Windows - Run the Cygwin installer and install the ''MPIDE'' package. If you've already installed Cygwin, don't worry:
-the installer can be used to install new packages to an existing Cygwin installation. Once MPIDE is installed, open a 
-new Cygwin terminal and follow the below instructions to set the MPIDE environment variables. 
+* Windows - Download and install MPIDE from Digilent and set the MPIDE
+  environment variables (see below).
+* Linux - Find `avrdude` in your distribution's package manager.
+* OS X - Install `avrdude` with Homebrew
 
 #### Configuring the MPIDE Environment Variables
 
-The ''MPIDE_DIR'' environment variable must be set to the proper installation path of ''MPIDE'' for the upload script to work.
-To set the variable, find your MPIDE install directory (the default is shown below) and use the export command:
+The `MPIDE_DIR` environment variable must be set to the proper installation path
+of `MPIDE` for the upload script to work.
+
+To set the variable, find your MPIDE install directory (the default is shown
+below) and use the export command:
 
     $ export MPIDE_DIR=/Applications/Mpide.app/Contents/Resources/Java
 
-When using ''export'', variables are only saved for your current terminal session (and only in that terminal window). To make
-the change permanent, add the '''export'' command above to the file ''~/.bashrc'' (in Windows(Cygwin)/Linux) or ''~/.bash_profile''
-(in OS X), then start a new terminal.
+When using `export`, variables are only saved for your current terminal session
+(and only in that terminal window). To make the change permanent, add the
+`'export` command above to the file `~/.bashrc` (in Windows(Cygwin)/Linux) or
+`~/.bash_profile` (in OS X), then start a new terminal.
 
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-If you're still having issues getting your firmware to flash, search the [Google Group][gg] for the error you're getting,
-and if you still need help, open a new discussion.
+If you're still having issues getting your firmware to flash, search the [Google
+Group][gg] for the error you're getting, and if you still need help, open a new
+discussion.
 
 [gg]: http://groups.google.com/group/openxc
 
