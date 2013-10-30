@@ -73,7 +73,7 @@ vi-firmware/ $ script/upload_hex.sh &lt;firmware file&gt;.hex /dev/ttyUSB2</code
          <h4 class="panel-title">
             <a class="accordian-toggle" data-toggle="collapse"
                   data-parent="#accordian" href="#collapseWindows">
-               Windows (click to expand)
+               Windows
             </a>
          </h4>
       </div>
