@@ -33,7 +33,7 @@ section to make sure you have the correct cable attached.
          <div class="panel-body">
 
          <p>If your network uses an Internet proxy (e.g. a corporate network)
-         set these environmet variables:
+         set these environment variables:
 
 <pre><code>$ export http_proxy=&lt;your proxy&gt;
 $ export https_proxy=$http_proxy
