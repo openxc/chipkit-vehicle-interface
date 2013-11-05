@@ -105,22 +105,22 @@ C:\Users\me\Documents\vi-firmware\script></code></pre>
 
                </li>
 
-               <li>Run the <code>upload_hex.bat</code> script, passing the path
-               to the firmware file you want to program and the COM port number,
-               e.g.:
+               <li>Plug in the chipKIT with the mini-USB connection, and
+               <strong>within 5 seconds</strong>, run the
+               <code>upload_hex.bat</code> script, passing the path to the
+               firmware file you want to program and the COM port number, e.g.:
 
                <pre><code>C:\Users\me\Documents\vi-firmware\script> upload_hex.bat C:\Users\me\Downloads\openxc-firmware\focus-2012-CHIPKIT.hex com14</code></pre>
+
+               The chipKIT board will only stay in programming mode for ~5 seconds
+               once plugged into the USB port. If you have issues running the
+               firmware script, unplug the vehicle interface, plug it back in, and
+               quickly re-run the script.
 
                </li>
 
             </ol>
          </div>
-         
-        <div class="alert alert-error">
-            Warning: The ChipKIT board will only stay in "Programming" mode for ~5 seconds once plugged into the USB port.
-            If you have issues running the firmware script, unplug the vehicle interface, plug it back in, and quickly re-run the
-            script. 
-        </div>
     </div>
 
    </div>
