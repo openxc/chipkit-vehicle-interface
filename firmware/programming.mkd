@@ -115,7 +115,14 @@ C:\Users\me\Documents\vi-firmware\script></code></pre>
 
             </ol>
          </div>
-      </div>
+         
+        <div class="alert alert-error">
+            Warning: The ChipKIT board will only stay in "Programming" mode for ~5 seconds once plugged into the USB port.
+            If you have issues running the firmware script, unplug the vehicle interface, plug it back in, and quickly re-run the
+            script. 
+        </div>
+    </div>
+
    </div>
 
 </div>
