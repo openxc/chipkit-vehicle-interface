@@ -84,4 +84,4 @@ See the CONTRIBUTORS file.
 ## License
 
 Except as otherwise noted, the content of the website is licensed by Ford Motor
-Company under the Creative Commons Attribution 3.0 License.
+Company under the Creative Commons Attribution 4.0 International License.
